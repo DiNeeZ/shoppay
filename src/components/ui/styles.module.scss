@@ -9,6 +9,7 @@
   background-color: $blue;
   cursor: pointer;
   transition: background-color 0.15s linear;
+  white-space: nowrap;
 
   &:hover {
     background-color: darken($blue, 10);

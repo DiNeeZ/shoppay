@@ -3,29 +3,81 @@
   font-size: 1.5rem;
   text-transform: uppercase;
   font-weight: 500;
+  background-color: #0192ee;
 
-  &Background {
+  &::before {
+    content: "";
     position: absolute;
-    width: 100%;
+    width: 14rem;
     height: 100%;
-    object-fit: cover;
-    z-index: -1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-image: url("/images/main-banner.png");
+    background-size: cover;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 14rem;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("/images/main-banner.png");
+    transform: scaleX(-1);
+
+    background-size: cover;
   }
 }
 
 .container {
   @include container;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  padding: 1rem 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  z-index: 1;
+
+  a {
+    box-shadow: 1px 1px 3px rgba($black, 0.7);
+  }
 }
 
 .yellow {
   color: orange;
+  text-shadow: 1px 1px 3px rgba($black, 0.7);
+  text-align: center;
 }
 
 .white {
   color: $white;
+  text-shadow: 1px 1px 3px rgba($black, 0.7);
+  text-align: center;
+}
+
+@include tablet {
+  .add {
+    font-size: 1.3rem;
+  }
+}
+
+@include mobile {
+  .container {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+
+    a {
+      width: 75%;
+      justify-content: center;
+      padding: 1rem;
+    }
+  }
 }
