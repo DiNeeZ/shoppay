@@ -1,0 +1,16 @@
+.bannerButton {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: $white;
+  background-color: $blue;
+  cursor: pointer;
+  transition: background-color 0.15s linear;
+
+  &:hover {
+    background-color: darken($blue, 10);
+  }
+}

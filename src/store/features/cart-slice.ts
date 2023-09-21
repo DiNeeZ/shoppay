@@ -5,14 +5,16 @@ type InitialState = {
 };
 
 const initialState: InitialState = {
-  cartItems: [],
+  cartItems: ["cacanat", "bukake"],
 };
 
 const cart = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addProduct: () => console.log("add product"),
+    addProduct: (state) => {
+      state.cartItems.push(state.cartItems[0]);
+    },
   },
 });
 
