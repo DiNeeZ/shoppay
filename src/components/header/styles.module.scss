@@ -1,8 +1,17 @@
+.header {
+  box-shadow: $shadow-1;
+}
+
+.container {
+  @include container;
+}
+
+// aD ----------------------------------------------------------------------------------
 .add {
   position: relative;
   font-size: 1.5rem;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 700;
   background-color: #0192ee;
 
   &::before {
@@ -30,54 +39,107 @@
 
     background-size: cover;
   }
-}
 
-.container {
-  @include container;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  z-index: 1;
-
-  a {
-    box-shadow: 1px 1px 3px rgba($black, 0.7);
-  }
-}
-
-.yellow {
-  color: orange;
-  text-shadow: 1px 1px 3px rgba($black, 0.7);
-  text-align: center;
-}
-
-.white {
-  color: $white;
-  text-shadow: 1px 1px 3px rgba($black, 0.7);
-  text-align: center;
-}
-
-@include tablet {
-  .add {
-    font-size: 1.3rem;
-  }
-}
-
-@include mobile {
-  .container {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    flex-direction: column;
-    gap: 0.5rem;
-    font-size: 1.2rem;
+  &__content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    z-index: 1;
 
     a {
-      width: 75%;
-      justify-content: center;
-      padding: 1rem;
+      box-shadow: 1px 1px 3px rgba($black, 0.7);
+    }
+
+    @include mobile {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 1.2rem;
+
+      a {
+        width: 75%;
+        justify-content: center;
+        padding: 1rem;
+      }
+    }
+  }
+
+  &__text {
+    color: $white;
+    text-shadow: 1px 1px 3px rgba($black, 0.7);
+    text-align: center;
+  }
+
+  &__orange {
+    color: orange;
+  }
+
+  @include tablet {
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+}
+
+// TOP ----------------------------------------------------------------------------------
+.top {
+  background-color: $light-grey;
+
+  &__icon {
+    fill: $grey;
+  }
+
+  &__dropdownBtn {
+    background: none;
+    cursor: pointer;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.875rem;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: $grey;
+
+    &:not(:last-child):after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -0.5rem;
+      width: 1px;
+      height: 1rem;
+      transform: translateY(-50%);
+      background-color: $mid-grey;
+    }
+  }
+
+  &__icon {
+    transform: scale(1.2);
+  }
+
+  &__link {
+    transition: color 0.15s linear;
+
+    &:hover {
+      color: darken($grey, 90);
     }
   }
 }

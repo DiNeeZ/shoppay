@@ -1,9 +1,17 @@
+// Sizes
 $content-width: 1170px;
 $container-offset: 15px;
 $container-width: calc($content-width + ($container-offset * 2));
 
+// Colors
 $white: #fff;
 $orange: #e0a639;
 $blue: #043dda71;
-$red-color: #bd3636;
+$red: #bd3636;
 $black: #0e0e0e;
+$grey: #334155;
+$mid-grey: #94a3b8;
+$light-grey: #f8fafc;
+
+// Shadows
+$shadow-1: 0px 2px 8px 0px rgba($grey, 0.2);
